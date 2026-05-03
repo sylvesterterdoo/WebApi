@@ -19,7 +19,7 @@ pipeline {
             steps {
                 sleep 10
                 sh 'docker ps'
-                sh 'docker logs $(docker ps -1 --filter name=webapi)'
+                sh 'docker logs $(docker ps -lq --filter name=webapi)'
             }
         }
     }
